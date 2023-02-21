@@ -1,5 +1,11 @@
 const cityForm = document.querySelector("form");
 
+const updateCity = async(city)=>{
+
+console.log(city);
+
+}
+
 cityForm.addEventListener("submit", e =>{
     // prevent default 
     e.preventDefault();
@@ -9,5 +15,6 @@ cityForm.addEventListener("submit", e =>{
     cityForm.reset();
 
     // update the ui with new city
+    updateCity(city);
 
 })
