@@ -6,8 +6,7 @@ const icon = document.querySelector(".icon img");
 
 const updateUI = (data) => {
 
-    // const cityDets = data.cityDets;
-    // const weather = data.weather;
+    
 
     //destructure properties
     const {cityDets, weather} = data;
@@ -20,6 +19,16 @@ const updateUI = (data) => {
     <span>${weather.Temperature.Metric.Value}</span>
     <span>&deg;C</span>
     `;
+
+    // update the night and day as well as the icons
+
+    let timeSrc = null;
+    if(weather.IsDayTime){
+        timeSrc = '../img/day.svg'
+    }else{
+        timeSrc = '../img/night.svg'
+    }
+    time.setAttribute('src',timeSrc)
 
     //remove the d-none class
     if(card.classList.contains("d-none")){
