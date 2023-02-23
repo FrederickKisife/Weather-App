@@ -18,26 +18,14 @@ class Forcast{
     
         return data[0]
     }
-}
+    async getWeather(id){
 
+const query = `${id}?apikey=${this.key}`;
 
-const key = "Xp9sUrWsROTILnrT2dPJb2FsJFyhTg6b";
-
-// get weather information
-const getWeather = async(id)=>{
-
-const base = "http://dataservice.accuweather.com/currentconditions/v1/";
-const query = `${id}?apikey=${key}`;
-
-const response =  await fetch(base + query);
+const response =  await fetch(this.weatherURI + query);
 const data = await response.json();
 return data[0];
-
+    }
 }
-
-// get city information
-const getCity = async (city)=>{
-   
-};
 
 
